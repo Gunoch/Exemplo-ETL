@@ -1,15 +1,52 @@
-Brazilian Universities Data ETL
-This notebook demonstrates a simple ETL (Extract, Transform, Load) process to fetch data about Brazilian universities from a public API, process it, and store it in an SQLite database.
+# 🇧🇷 Brazilian Universities Data ETL
 
-Process:
-Extract: Data is fetched from the Universities Hipolabs API.
-Transform: The data is transformed into a pandas DataFrame, filtered to include only universities in the state of Goiás, and specific columns are selected and formatted.
-Load: The transformed data is loaded into an SQLite database named my_lite_store.db into a table called goias_uni.
-Files:
-This notebook (.ipynb file): Contains the code for the ETL process.
-my_lite_store.db: The SQLite database file containing the processed university data.
-universities.csv: A CSV file containing the transformed data before loading into the database.
-How to Run:
-Open the notebook in Google Colab or a local Jupyter environment.
-Run the cells sequentially to execute the ETL process.
-The resulting SQLite database file (my_lite_store.db) and CSV file (universities.csv) will be created in the same directory as the notebook.
+This project demonstrates a simple **ETL (Extract, Transform, Load)** process that collects, processes, and stores data about Brazilian universities using Python, Pandas, and SQLite.
+
+---
+
+## 🧩 Process Overview
+
+### 1. **Extract**
+Data is fetched from the **[Universities Hipolabs API](https://universities.hipolabs.com/)**, which provides public information about universities worldwide.
+
+### 2. **Transform**
+The raw data is:
+- Converted into a **Pandas DataFrame**.  
+- **Filtered** to include only universities located in the state of **Goiás**.  
+- **Formatted** to include selected columns such as name, country, domain, and web page.
+
+### 3. **Load**
+The cleaned and transformed data is:
+- Saved locally as a **CSV file** (`universities.csv`).  
+- Inserted into an **SQLite database** (`my_lite_store.db`) under the table **`goias_uni`**.
+
+---
+
+## 📁 Project Files
+
+| File | Description |
+|------|--------------|
+| `Brazilian_Universities_ETL.ipynb` | The Jupyter Notebook containing the full ETL code. |
+| `my_lite_store.db` | SQLite database containing the processed data. |
+| `universities.csv` | CSV file containing the transformed dataset prior to loading into the database. |
+
+---
+
+## ⚙️ How to Run
+
+1. **Open** the notebook in [Google Colab](https://colab.research.google.com) or a local **Jupyter environment**.  
+2. **Run all cells sequentially** to perform the ETL process.  
+3. After execution, the files `my_lite_store.db` and `universities.csv` will be generated in the same directory as the notebook.
+
+---
+
+## 🧰 Requirements
+
+- Python 3.8+
+- pandas
+- requests
+- sqlite3 (included in Python standard library)
+
+Install dependencies:
+```bash
+pip install pandas requests
